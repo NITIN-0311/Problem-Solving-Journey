@@ -1,13 +1,16 @@
 What is Backtracking ?
 
-Backtracking is problem solving technique, that lets you to explore you multiple choices(subsets, windows) while maintaining the given condition. If the condition is violated it backtracks to the previous state and explore alternate way.
+Backtracking is problem solving technique, that lets you to explore you multiple choices(subsets, windows) 
+while maintaining the given condition. If the condition is violated it backtracks to the previous state and
+explore alternate way.
 
 Where is backtracking useful?
   When your problem needs exploring different combinations of choices with given constraint
   Path based problems
   Permutations Problems and so on
 
-Here is an example for better understanding. Let's say you have to choose the k number of toppings for your pizza in n sized menu.  
+Here is an example for better understanding. Let's say you have to choose the k number of toppings for your
+pizza in n sized menu.  
 
 pizza_cmb(menu,k):
     options=[]
