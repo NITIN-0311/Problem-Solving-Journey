@@ -1,0 +1,69 @@
+What is Backtracking ?
+
+Backtracking is problem solving technique, that lets you to explore you multiple choices(subsets, windows) while maintaining the given condition. If the condition is violated it backtracks to the previous state and explore alternate way.
+
+Where is backtracking useful?
+  When your problem needs exploring different combinations of choices with given constraint
+  Path based problems
+  Permutations Problems and so on
+
+Here is an example for better understanding. Let's say you have to choose the k number of toppings for your pizza in n sized menu.  
+
+pizza_cmb(menu,k):
+    options=[]
+    current_menu=[]
+    def cmb(current_menu,start):
+        
+        if len(current_menu)==k:
+            options.append(current_menu[:])
+            return ->Prune Branch
+        
+        for i in range(start,len(menu)):
+            current_menu.append(menu[i])    
+            cmb(current_menu,i+1)
+            current_menu.pop() ->Backtrack
+            
+    cmb([],0)
+    return options
+    
+pizza_cmb(["cheese", "corn", "paneer", "onion", "mushroom"],3)
+Result:
+
+['cheese', 'corn', 'paneer']
+['cheese', 'corn', 'onion']
+['cheese', 'corn', 'mushroom']
+['cheese', 'paneer', 'onion']
+['cheese', 'paneer', 'mushroom']
+['cheese', 'onion', 'mushroom']
+['corn', 'paneer', 'onion']
+['corn', 'paneer', 'mushroom']
+['corn', 'onion', 'mushroom']
+['paneer', 'onion', 'mushroom'] 
+Logical Template
+
+FUNCTION Backtracking(input):
+
+    result ← empty list
+    path ← empty list
+
+    FUNCTION backtrack(start):
+
+            // 1. Base case
+            Store explored result
+            Return ->Pruning
+
+
+            // 2.1 Choose
+            APPEND input[i] TO path
+
+            // 2.2 Explore deeper
+            CALL backtrack(i + 1)
+
+            // 2.3 Undo the choice (backtrack)
+            REMOVE last element FROM path
+
+    CALL backtrack(0)
+    RETURN result
+
+
+
